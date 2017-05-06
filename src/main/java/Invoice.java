@@ -2,7 +2,7 @@ import java.util.Date;
 
 public class Invoice {
 
-    int SaleID;
+    int SID;
     int CID;
     double CIDProfit;
     double StoreProfit;
@@ -13,7 +13,7 @@ public class Invoice {
 
     Invoice(int sid, int cid, double cidProfit, double storeProfit, double amountPaid, Date paymentDate, double balance) {
 
-        SaleID = sid;
+        SID = sid;
         CID = cid;
         CIDProfit = cidProfit;
         StoreProfit = storeProfit;
@@ -23,7 +23,7 @@ public class Invoice {
     }
 
     @Override
-    public String toString() { return "[Sale ID: " + SaleID + "]" + " [CID: " + CID + "]" + " [CID Profit: " + CIDProfit + "]" +
+    public String toString() { return "[Sale ID: " + SID + "]" + " [CID: " + CID + "]" + " [CID Profit: " + CIDProfit + "]" +
             " [Store Profit: " + StoreProfit + "]" + " [Amount Paid: " + AmountPaid + "]" + " [Payment Date: " + PaymentDate + "]" + " [Balance: " + Balance + "]";
     }
 

@@ -29,4 +29,6 @@ public class Record {
     public String toString() { return "[RID: " + RID + "]" + " [CID: " + CID + "]" + " [Artist: " + Artist + "]" + " [Title: " + Title + "]" +
             " [Sales Price: " + SalesPrice + "]" + " [Date Added: " + DateAdded + "]" + " [Status: " + Status + "]" + " [Notified?: " + Notified + "]";
     }
+
+
 }

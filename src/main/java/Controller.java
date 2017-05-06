@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 
 public class Controller {
-    static GUI gui;
+    static RecordStoreGUI gui;
     static DB db;
 
     public static void main(String[] args) {
@@ -16,25 +16,45 @@ public class Controller {
 
         db = new DB();
         db.createTable();
-        ArrayList<Consignor> consignors = db.fetchAllRecords();
+        ArrayList<Consignor> consignors = db.fetchAllConsignors();
         ArrayList<Record> records = db.fetchAllRecords();
-        ArrayList<Sale> sales = db.fetchAllRecords();
-        gui = new GUI(this);
-        gui.setListData();
+        ArrayList<Sale> sales = db.fetchAllSales();
+        gui = new RecordStoreGUI(this);
+        gui.setConsignorListData(consignors);
     }
 
 
-    ArrayList getAllData() {
+    ArrayList getAllConsignors() {
+        return db.fetchAllConsignors();
+    }
+
+    ArrayList getAllRecords() {
         return db.fetchAllRecords();
     }
 
-    void addRecordToDatabase(Consignor consignor) {
-        db.addRecord(consignor);
+    ArrayList getAllSales() {
+        return db.fetchAllSales();
     }
 
-    void delete(Consignor consignor) {
-        db.delete(consignor);
+    ArrayList getAllInvoices() {
+        return db.fetchAllInvoices();
     }
 
-    void updateRecordInDatabase(Consignor consignor) { db.updateRecord(consignor);}
+    void addConsignorToDatabase(Consignor consignor) {db.addConsignor(consignor);
+    }
+
+    void addRecordToDatabase(Record record) {db.addRecord(record);
+    }
+
+    void addSaleToDatabase(Sale sale) {db.addSale(sale);
+    }
+
+    void addInvoiceToDatabase(Invoice invoice) {db.addInvoice(invoice);
+    }
+
+    void delete(Record record) {
+        db.deleteRecord(record);
+    }
+
+    void updateRecordInDatabase(Record record) { db.updateRecord(record);}
 }

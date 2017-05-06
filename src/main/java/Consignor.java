@@ -3,9 +3,9 @@ public class Consignor {
     int CID;
     String firstName;
     String lastName;
-    int phoneNumber;
+    String phoneNumber;
 
-    Consignor(int cid, String fName, String lName, int phone) {
+    Consignor(int cid, String fName, String lName, String phone) {
 
         CID = cid;
         firstName = fName;
